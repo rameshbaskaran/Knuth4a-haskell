@@ -1,9 +1,9 @@
 module Main where
 
-geometricSeriesSum :: Double -> Double -> Int -> Double
+geometricSeriesSum :: Integer -> Integer -> Integer -> Integer
 geometricSeriesSum a r n
-  | r == 1.0  = a * fromIntegral n
-  | otherwise = a * (1.0 - r**fromIntegral n) / (1.0 - r)
+  | r == 1    = a * n
+  | otherwise = a * (r ^ n - 1) `div` (r - 1)
 
 main :: IO ()
 main = do
